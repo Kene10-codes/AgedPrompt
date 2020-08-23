@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Nunito+Sans&display=swap');
+
+$colors: (
+    primary: #000000,
+    primary-dark:  #19303E,
+    neutral: #ffffff,
+    secondary: #399BB6,
+    tertiary: #DEF7FE,
+
+);
+
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$margin-top: 10px;
+$margin-bottom: 60px;
+$padding: 15px;
+$padding-top: 10px;
+
+
+$desktop: 840px;
+
+
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.navbar {
+    
+    &__link {
+          text-decoration: none;    
+      }
+
+      &__img {
+        display: block;
+        height:  47px;
+        padding: 20px;
+    }
+
+  }
+
+
+  .container {
+      margin-top: 50px;
+      padding: 15px;
+      
+      @include desktop {
+          display: grid;
+          grid-template-columns: 60% auto;
+          grid-template-areas: 
+          "primary secondary";
+      }
+
+      &__img {
+          width: 100%;
+          display: flex;
+          align-self: center;
+          overflow: hidden;
+          
+          
+
+          @include desktop {
+              display: none;
+          }
+      }
+
+      img {
+          margin: 0 auto;
+          max-width: 100%;
+      }
+     
+      .img__wrapper {
+          display: none;
+
+          @include desktop {
+              display: inline-block;
+              grid-area: secondary;
+              height: fit-content;
+              align-self: center;
+          }
+      }
+
+  }
+
+  .content {
+      
+    @include desktop {
+        grid-area: primary;
+        height: fit-content;
+        align-self: center;
+        padding-left: 100px;
+    }
+
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 49px;
+
+        @include desktop {
+            font-weight: bold;
+            font-size: 64px;
+            line-height: 87px;  
+        }
+
+      } 
+
+      p {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0.4px;
+      }
+
+      &__para2 {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0.4px;
+        padding-top: 10px; 
+      }
+  }
+
+  .main {
+     margin-top: $margin-top;
+     padding: $padding;
+
+     @include desktop {
+         padding: 0;
+     }
+
+
+     h2 {
+         text-align: center;
+
+         @include desktop {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: left;
+         }
+     }
+
+     .form__wrapper {
+         width: 100%;
+     }
+
+     input[type="email"] {
+         display: block;
+         background: #F3F3F3;
+         color: #030101;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 18px;
+         width: 100%;
+         height: 66px;
+         outline: none;
+         border: none;
+         border-radius: 10px;
+         padding: $padding;
+
+         @include desktop {
+             display: inline-block;
+             width: 404px;
+             
+         }
+
+     }
+
+     input[type="submit"] {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        color: #FFFFFF;
+        width: 100%;
+        height: 66px;
+        background: color(secondary);
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+
+    
+        @include desktop {
+            width: 156px;
+            padding: 0;
+            margin: 0;
+        }
+     }
+  }
+
+  .card__container {
+        margin-top: $margin-top;
+        padding: $padding;
+
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+
+        .card {
+            width: 270px;
+            max-width: 100%;
+            height: 264.33px;
+            background: color(tertiary);
+            border-radius: 30px 30px 0px;
+            margin: 20px 0;
+
+            @include desktop {
+                margin: 20px;
+                width: 360px;
+                height: 284px;
+            }
+
+            &__img {
+                margin: 0 auto;
+                padding-top: 55px;
+                display: block;
+                
+            }
+
+            &__para {
+                font-weight: bold;
+                font-size: 18px;
+                color: color(primary);
+                line-height: 25px;
+                padding: $padding;
+                text-align: center;
+            }
+        }
+  }
+
+.wrapper {
+    margin-top: $margin-top;
+    padding: $padding;
+
+    @include desktop {
+        padding: 0;
+    }
+
+    
+      
+    .cover {
+        background: color(tertiary);
+        margin-bottom: $margin-bottom;
+
+        
+
+        @include desktop {
+            display: grid;
+            height: 90vh;
+            grid-template-columns: 50% auto;
+            grid-template-areas: 
+            "primary-card secondary-card"
+            ;
+
+            .wrapper__body {
+                padding-right: 100px;
+            }
+        }
+        
+    }
+    
+    .second-cover {
+        margin-bottom: $margin-bottom;
+
+        @include desktop {
+          display: grid;
+          grid-template-columns: 50% auto;
+          grid-template-areas: 
+            "secondary-card primary-card";
+
+            .wrapper__body {
+                padding-left: 100px;
+            }
+          
+        }
+    }
+
+    &__img {
+        margin: 0 auto;
+        display: block;
+
+        @include desktop {
+            grid-area: primary-card;  
+            align-self: center;
+        }
+
+        img {
+            margin: 0 auto;
+            max-width: 100%;
+
+            
+        }
+    }
+
+    &__body {
+        padding: $padding;
+        margin-left: 5px;
+
+        @include desktop {
+            grid-area: secondary-card;
+            align-self: center;
+            
+        }
+
+    
+        h2 {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 33px;
+            color: color(primary);
+
+            p {
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 22px;
+                
+            }
+
+        }
+    }
+
+    button {
+        border-radius: 30px 30px 0px 30px;
+        background-color: color(neutral);
+        border: none;
+        outline: none;
+        color: color(primary-dark);
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 25px;
+        width: 180px;
+        height: 60px;
+        cursor: pointer;
+    }
+
+    .button-link {
+        border-radius: 30px 30px 0px 30px;
+        background-color: color(tertiary);
+        border: none;
+        outline: none;
+        color: color(primary-dark);
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 25px;
+        width: 180px;
+        height: 60px;
+
+    }
+  }
+
+  .hero {
+      margin-top: $margin-top;
+      padding: $padding;
+
+      h2 {
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 49px;
+        text-align: center;
+
+        span {
+            color: color(secondary);
+            display: block;
+
+            @include desktop {
+                display: inline;
+            }
+        }
+
+      }
+
+      p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            align-self: center;     
+        }
+            
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+  
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+  }
+  
+  .footer {
+      background: color(primary-dark);
+      margin-top: $margin-top;
+      padding: $padding;
+      height: 60vh;
+     
+     @include desktop {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+     }
+
+      h2 {
+        color: color(neutral);
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 33px;
+        padding-top: 50px;
+      
+        @include desktop {
+            text-align: center;
+        }
+
+        span {
+             color: color(secondary);
+            
+        }
+        
+      }
+
+      .form__wrapper {
+          width: 100%;
+          
+
+          @include desktop {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+          }
+           
+          p {
+              color: color(neutral);
+              font-weight: bold;
+              font-size: 18px;
+              line-height: 25px;
+              
+
+              @include desktop {
+                  text-align: center
+              }
+          }
+
+          input[type="email"] {
+            display: block;
+            background: #F3F3F3;
+            color: #030101;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            width: 100%;
+            height: 66px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            padding: $padding;
+            
+            
+            @include desktop {
+                width: 404px;
+                display: inline-block;
+                margin: 0pc;
+            }
+       }
+
+       input[type="submit"] {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        color: #FFFFFF;
+        width: 100%;
+        height: 66px;
+        background: color(secondary);
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+
+       
+        @include desktop {
+            width: 156px;
+            padding: 0;
+            margin: 0;
+        }
+
+     }
+}
+   
+      .footer__img {
+          display: none;
+
+          @include desktop {
+              display: inline-block;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+          }
+      }
+  
+   }
