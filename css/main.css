@@ -222,7 +222,7 @@ body {
 
 @media (min-width: 840px) {
   .card__container .card {
-    margin: 20px;
+    margin: 20px auto;
     width: 360px;
     height: 284px;
   }
