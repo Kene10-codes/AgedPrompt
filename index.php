@@ -193,7 +193,7 @@
                             </button>' . $error . '</div>';
                 }
          ?>
-        <form action="" method="GET">
+        <form action="" method="POST">
         <input 
         type="email" 
         id="email"
