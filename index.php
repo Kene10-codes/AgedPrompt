@@ -40,12 +40,12 @@
 
             <?php
                 if(isset($success)) {
-                    echo '<div  class="alert alert-info alert-dismissible text-success" role="alert" style="font-size: 2rem;"> 
+                    echo '<div  class="alert alert-info alert-dismissible text-success col-md-12" role="alert" style="font-size: 2rem;"> 
                     <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
                     </button>' . $success . '</div>';
                 } elseif (isset($error)) {
                     echo '<div class="alert alert-danger alert-dismissible" role="alert" style="font-size: 2rem;">
-                            button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
+                            <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
                             </button>' . $error . '</div>';
                 }
          ?>
@@ -184,12 +184,12 @@
         <p>Sign up to join the waitlist</p>
         <?php
                 if(isset($success)) {
-                    echo '<div  class="alert alert-info alert-dismissible text-success" role="alert" style="font-size: 2rem;"> 
+                    echo '<div  class="alert alert-info alert-dismissible text-success col-md-12" role="alert" style="font-size: 2rem;"> 
                     <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
                     </button>' . $success . '</div>';
                 } elseif (isset($error)) {
-                    echo '<div class="alert alert-danger alert-dismissible" role="alert" style="font-size: 2rem;">
-                            button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
+                    echo '<div class="alert alert-danger alert-dismissible col-md-12" role="alert" style="font-size: 2rem;">
+                            <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
                             </button>' . $error . '</div>';
                 }
          ?>

@@ -16,7 +16,7 @@ body {
 
 .navbar__img {
   display: block;
-  height: 47px;
+  height: 13vh;
   padding: 20px;
 }
 
@@ -82,7 +82,6 @@ body {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    padding-left: 100px;
   }
 }
 
