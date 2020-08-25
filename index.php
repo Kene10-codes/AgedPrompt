@@ -51,7 +51,7 @@
          ?>
 
           <div class="form__wrapper">
-            <form action="" method="POST">
+            <form action="db.php" method="POST" enctype="multipart/form-data">
                 <input 
                  type="email"
                  id="email" 
@@ -181,10 +181,10 @@
 <div class="footer">
     <h2><span>AgedPrompt</span> will be coming to devices soon</h2>
     <div class="form__wrapper">
-        <p>Sign up to join the waitlist</p>
+        <p id="footer-para">Sign up to join the waitlist</p>
         <?php
                 if(isset($success)) {
-                    echo '<div  class="alert alert-info alert-dismissible text-success col-md-12" role="alert" style="font-size: 2rem;"> 
+                    echo '<div  class="alert alert-info alert-dismissible text-success " role="alert" style="font-size: 1rem;"> 
                     <button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span>
                     </button>' . $success . '</div>';
                 } elseif (isset($error)) {
@@ -193,7 +193,7 @@
                             </button>' . $error . '</div>';
                 }
          ?>
-        <form action="" method="POST">
+        <form action="db.php" method="POST">
         <input 
         type="email" 
         id="email"
